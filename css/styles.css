@@ -77,6 +77,8 @@ body {
   min-width: 320px;
   overflow-x: hidden;          /* guarantees no horizontal page scroll */
   font-family: var(--font-body);
+  font-size: 1rem;             /* base font size (16px) */
+  line-height: 1.6;            /* comfortable reading */
   color: var(--cream);
   background: var(--bg);
   transition: color .3s, background .3s;
@@ -188,6 +190,7 @@ svg.icon { width: 20px; height: 20px; flex: 0 0 auto; }
   background: var(--orange); transform: translateX(-50%) scale(0); transition: .2s;
 }
 .nav a:hover, .nav a.active { opacity: 1; }
+.nav a:hover { color: var(--ochre); text-decoration: underline; text-underline-offset: 6px; }
 .nav a.active::after { transform: translateX(-50%) scale(1); }
 .header-actions { display: flex; gap: 6px; align-items: center; }
 .icon-button {
@@ -209,13 +212,16 @@ svg.icon { width: 20px; height: 20px; flex: 0 0 auto; }
 .hero {
   min-height: 780px; position: relative; display: grid; grid-template-columns: 47% 53%;
   overflow: hidden; padding-top: var(--header-h);
-  background: radial-gradient(circle at 8% 14%, color-mix(in srgb, #5a3422 80%, var(--bg)) 0, transparent 29%), var(--bg);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 97%, transparent) 0%, color-mix(in srgb, var(--bg) 90%, transparent) 50%, color-mix(in srgb, var(--bg) 82%, transparent) 100%),
+    url('../images/traditional-food-banana-leaves.jpg') center / cover no-repeat,
+    var(--bg);
 }
 .hero::after {
   content: ''; position: absolute; width: 700px; height: 700px; left: -420px; top: 80px;
   border: 1px solid color-mix(in srgb, var(--cream) 9%, transparent); border-radius: 50%; pointer-events: none;
 }
-:root[data-theme="light"] .hero { background: radial-gradient(circle at 8% 14%, #f3e5d0 0, transparent 29%), var(--bg); }
+
 .hero-orb { position: absolute; width: 280px; height: 280px; border-radius: 50%; background: #bd753b; filter: blur(120px); opacity: .25; left: 42%; bottom: -100px; }
 .hero-copy { z-index: 3; position: relative; align-self: center; padding: 60px 0 70px clamp(30px, 8vw, 130px); max-width: 730px; }
 .hero h1 { font-size: clamp(64px, 7vw, 108px); line-height: .92; letter-spacing: -.055em; margin: 28px 0 30px; max-width: 720px; }
@@ -269,6 +275,7 @@ svg.icon { width: 20px; height: 20px; flex: 0 0 auto; }
 .card-body { min-height: 95px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 10px 8px; }
 .card-body p { margin: 0 0 7px; text-transform: uppercase; letter-spacing: .16em; font-size: 9px; opacity: .8; }
 .card-body h3 { font-size: 24px; }
+.card-desc { display: block; margin-top: 8px; font-size: .8rem; line-height: 1.5; opacity: .85; }
 .card-body h3 a { text-decoration: none; }
 .card-body h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .center-link { display: flex; justify-content: center; margin-top: 64px; }
@@ -508,11 +515,13 @@ svg.icon { width: 20px; height: 20px; flex: 0 0 auto; }
 .contact-form { display: grid; gap: 24px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .field label { display: block; text-transform: uppercase; font-size: 11px; letter-spacing: .14em; color: var(--rust); font-weight: 600; }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   display: block; width: 100%; border: 0; border-bottom: 1px solid #bba18c; outline: none; background: transparent;
   padding: 12px 0; margin-top: 5px; resize: vertical; color: #342118; font-size: 15px; transition: border-color .2s;
 }
-.field input:focus, .field textarea:focus { border-color: var(--rust); }
+.field select { padding: 12px 10px; border: 1px solid #bba18c; border-radius: 10px; cursor: pointer; }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--rust); box-shadow: 0 6px 14px -8px rgba(163, 78, 48, .7); }
+.newsletter-form input:focus { box-shadow: 0 0 0 4px rgba(46, 28, 20, .18); }
 .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: #c0392b; }
 .field-hint { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--paper-muted); margin-top: 6px; }
 .error-message { color: #b42318; font-size: 12px; min-height: 16px; margin-top: 6px; display: block; }
