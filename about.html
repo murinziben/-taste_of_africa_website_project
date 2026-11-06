@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&amp;family=Italiana&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
   <!-- Loaded in the head so the saved theme is applied before the page paints -->
   <script src="js/script.js"></script>
 </head>
@@ -134,17 +134,32 @@
 
     <!-- MAP -->
     <section class="paper" aria-labelledby="map-title">
-      <span class="eyebrow">Where our recipes come from</span>
-      <h2 id="map-title" class="section-title">One continent, <em>54 countries.</em></h2>
-      <p>Africa is the world's second-largest continent, home to more than 1.4 billion people and thousands of languages and food traditions.</p>
+      <span class="eyebrow">A cultural food landmark</span>
+      <h2 id="map-title" class="section-title">Visit <em>Jemaa el-Fnaa.</em></h2>
+      <p>Jemaa el-Fnaa, the great square of Marrakesh in Morocco, fills every evening with food stalls serving <mark>harira, tagines, grilled meats and snail soup</mark>. Its living traditions are recognised by UNESCO as part of the Intangible Cultural Heritage of Humanity.</p>
       <figure>
-        <div class="map-frame"><iframe src="https://maps.google.com/maps?q=Africa&amp;z=3&amp;output=embed" title="Map of the African continent" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-        <figcaption style="font-size:12px;color:var(--paper-muted);margin-top:12px">Map of Africa (Google Maps).</figcaption>
+        <div class="map-frame"><iframe src="https://maps.google.com/maps?q=Jemaa+el-Fnaa%2C+Marrakesh%2C+Morocco&amp;z=16&amp;output=embed" title="Map of Jemaa el-Fnaa square in Marrakesh, Morocco" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <figcaption style="font-size:12px;color:var(--paper-muted);margin-top:12px">Map of Jemaa el-Fnaa, Marrakesh (Google Maps).</figcaption>
       </figure>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+    <div>
+      <span class="eyebrow" style="color:#6b2a16">The monthly table</span>
+      <h2 id="newsletter-title">Recipes &amp; stories, <em>once a month.</em></h2>
+      <p>One new dish, one cook's story and one ingredient explained — delivered to your inbox.</p>
+    </div>
+    <form class="newsletter-form" novalidate>
+      <label class="visually-hidden" for="newsletter-email">Email address</label>
+      <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      <button class="button" type="submit">Subscribe <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="newsletter-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div class="site-footer">
     <div class="footer-brand">
       <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <h2>Tastes <em>of</em> Africa</h2>
@@ -172,6 +187,7 @@
       <span>From Africa,<br>with warmth.</span>
       <p>&copy; <span class="current-year">2026</span> Tastes of Africa. A student project built with HTML, CSS &amp; JavaScript.</p>
     </div>
+  </div>
   </footer>
 
   <div class="search-overlay" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden>
