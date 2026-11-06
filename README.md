@@ -20,7 +20,7 @@ A responsive African culinary discovery website built with **HTML5, CSS3 and van
 ├── index.html, about.html, contact.html
 ├── recipes/        recipe listing + 6 recipe pages
 ├── regions/        regions overview + 4 region pages
-├── css/style.css   one shared stylesheet (CSS variables, Grid, Flexbox, media queries)
+├── css/styles.css   one shared stylesheet (CSS variables, Grid, Flexbox, media queries)
 ├── js/script.js    one shared script (all interactive features)
 └── images/         favicon
 ```

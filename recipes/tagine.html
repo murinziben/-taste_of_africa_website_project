@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&amp;family=Italiana&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/styles.css">
   <!-- Loaded in the head so the saved theme is applied before the page paints -->
   <script src="../js/script.js"></script>
 </head>
@@ -192,7 +192,22 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+    <div>
+      <span class="eyebrow" style="color:#6b2a16">The monthly table</span>
+      <h2 id="newsletter-title">Recipes &amp; stories, <em>once a month.</em></h2>
+      <p>One new dish, one cook's story and one ingredient explained — delivered to your inbox.</p>
+    </div>
+    <form class="newsletter-form" novalidate>
+      <label class="visually-hidden" for="newsletter-email">Email address</label>
+      <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      <button class="button" type="submit">Subscribe <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="newsletter-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div class="site-footer">
     <div class="footer-brand">
       <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <h2>Tastes <em>of</em> Africa</h2>
@@ -220,6 +235,7 @@
       <span>From Africa,<br>with warmth.</span>
       <p>&copy; <span class="current-year">2026</span> Tastes of Africa. A student project built with HTML, CSS &amp; JavaScript.</p>
     </div>
+  </div>
   </footer>
 
   <div class="search-overlay" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden>
