@@ -1,5 +1,5 @@
 /* =========================================================
-   TASTES OF AFRICA — SHARED STYLESHEET
+   TASTES OF AFRICA: SHARED STYLESHEET
    Built from the approved Figma Make design.
    Fonts: Italiana (display headings) + DM Sans (body text)
 
@@ -249,7 +249,7 @@ svg.icon { width: 20px; height: 20px; flex: 0 0 auto; }
 @keyframes float { 50% { transform: translateY(-12px); } }
 .vertical-copy { position: absolute; right: 20px; top: 48%; transform: rotate(90deg) translateY(-50%); transform-origin: right top; margin: 0; font-size: 9px; text-transform: uppercase; letter-spacing: .3em; color: var(--muted); }
 
-/* Four dishes — floating glass cards */
+/* Four dishes: floating glass cards */
 .floating-section { padding: 110px clamp(25px, 7vw, 110px); background: var(--caramel); color: #fff7e9; position: relative; overflow: hidden; }
 .floating-section::before { content: 'TASTE'; position: absolute; top: 170px; left: -10px; font-family: var(--font-display); font-size: 20vw; line-height: .7; color: rgba(65, 29, 13, .07); pointer-events: none; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; position: relative; z-index: 1; }
@@ -512,22 +512,45 @@ svg.icon { width: 20px; height: 20px; flex: 0 0 auto; }
 .contact-card h2 { font-size: clamp(42px, 5vw, 68px); line-height: 1; margin: 22px 0 30px; }
 .contact-card address { font-style: normal; margin-top: 30px; display: grid; gap: 14px; }
 .contact-card address a { color: var(--rust); }
-.contact-form { display: grid; gap: 24px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.field label { display: block; text-transform: uppercase; font-size: 11px; letter-spacing: .14em; color: var(--rust); font-weight: 600; }
-.field input, .field textarea, .field select {
-  display: block; width: 100%; border: 0; border-bottom: 1px solid #bba18c; outline: none; background: transparent;
-  padding: 12px 0; margin-top: 5px; resize: vertical; color: #342118; font-size: 15px; transition: border-color .2s;
+/* The form sits on its own card so it stands out from the page */
+.contact-form {
+  display: grid; gap: 22px; padding: clamp(24px, 4vw, 44px);
+  background: #fffaf2; border: 1px solid #e2cfb6; border-radius: 26px;
+  box-shadow: 0 30px 70px -30px rgba(69, 31, 15, .35);
+  position: relative; overflow: hidden;
 }
-.field select { padding: 12px 10px; border: 1px solid #bba18c; border-radius: 10px; cursor: pointer; }
-.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--rust); box-shadow: 0 6px 14px -8px rgba(163, 78, 48, .7); }
+/* warm spice-coloured strip along the top of the card */
+.contact-form::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg, var(--ochre), var(--orange), var(--rust));
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.field label { display: block; text-transform: uppercase; font-size: 11px; letter-spacing: .14em; color: var(--rust); font-weight: 600; margin-bottom: 8px; }
+/* Boxed fields with clearly visible borders */
+.field input, .field textarea, .field select {
+  display: block; width: 100%; padding: 14px 16px; margin: 0;
+  font-size: 15px; color: #342118; background: #fff;
+  border: 1.5px solid #c9ae94; border-radius: 14px; outline: none; resize: vertical;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.field input::placeholder, .field textarea::placeholder { color: #a48a76; }
+.field input:hover, .field textarea:hover, .field select:hover { border-color: #a98b72; }
+.field select { cursor: pointer; }
+/* Focus state: coloured border + soft glow */
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: var(--orange); background: #fffdf9;
+  box-shadow: 0 0 0 4px rgba(215, 92, 53, .18);
+}
 .newsletter-form input:focus { box-shadow: 0 0 0 4px rgba(46, 28, 20, .18); }
-.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: #c0392b; }
-.field-hint { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--paper-muted); margin-top: 6px; }
+.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: #c0392b; box-shadow: 0 0 0 4px rgba(192, 57, 43, .12); }
+.field-hint { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--paper-muted); margin-top: 8px; }
 .error-message { color: #b42318; font-size: 12px; min-height: 16px; margin-top: 6px; display: block; }
 .char-count.ok { color: #4f7a3a; font-weight: 600; }
 .contact-form .button { justify-self: start; }
-.thanks { padding: 50px; background: var(--paper-deep); border-radius: 22px; align-self: center; animation: fade-up .5s ease; }
+.contact-figure { margin-top: 40px; }
+.contact-figure img { height: 360px; object-fit: cover; border-radius: 180px 180px 16px 16px; box-shadow: 0 30px 60px -30px rgba(69, 31, 15, .5); }
+.contact-figure figcaption { font-size: 12px; color: var(--paper-muted); margin-top: 12px; }
+.thanks { padding: 50px; background: #fffaf2; border: 1px solid #e2cfb6; border-radius: 26px; box-shadow: 0 30px 70px -30px rgba(69, 31, 15, .35); align-self: center; animation: fade-up .5s ease; }
 .thanks > span { color: var(--rust); text-transform: uppercase; letter-spacing: .15em; font-size: 11px; font-weight: 600; }
 .thanks h2 { font-size: clamp(36px, 4vw, 52px); margin: 16px 0; }
 .thanks .button { margin-top: 10px; }

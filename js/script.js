@@ -1,5 +1,5 @@
 /* =========================================================
-   TASTES OF AFRICA — SHARED JAVASCRIPT
+   TASTES OF AFRICA: SHARED JAVASCRIPT
    One file used by every page. Each feature lives in its own
    function and first checks that the elements it needs exist,
    so a page without (for example) a contact form never errors.
@@ -38,7 +38,7 @@ function writeStorage(key, value) {
   try {
     localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
-    /* storage unavailable — the feature still works until the page reloads */
+    /* storage unavailable; the feature still works until the page reloads */
   }
 }
 
@@ -97,7 +97,7 @@ function initMobileMenu() {
 
 /* ---------- 3. SEARCH OVERLAY ----------
    The overlay contains a normal <form method="get"> that sends the
-   visitor to recipes.html?q=... — the recipes page then reads "q". */
+   visitor to recipes.html?q=..., and the recipes page then reads "q". */
 function initSearchOverlay() {
   const overlay = document.querySelector('.search-overlay');
   const openButton = document.querySelector('.search-open');

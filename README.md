@@ -1,6 +1,6 @@
 # Tastes of Africa
 
-A responsive African culinary discovery website built with **HTML5, CSS3 and vanilla JavaScript** — no frameworks or libraries. The visual design follows the approved Figma design (exported from Figma Make, kept in `African Culinary Discovery Website.zip` for reference).
+A responsive African culinary discovery website built with **HTML5, CSS3 and vanilla JavaScript**, with no frameworks or libraries. The visual design follows the approved Figma design (exported from Figma Make, kept in `African Culinary Discovery Website.zip` for reference).
 
 ## Pages
 
